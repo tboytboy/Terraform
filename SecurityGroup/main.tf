@@ -23,8 +23,8 @@ data "aws_vpc" "default" {
 }
 
 resource "aws_security_group" "web_server_sg_tf" {
- name        = "web-server-sg-tf"
- description = "Allow HTTPS to web server"
+ name        = "web-server-sg-tf-new"
+ description = "Allow HTTPS to web server new"
  vpc_id      = data.aws_vpc.default.id
 
 ingress {
