@@ -40,7 +40,7 @@ variable "subnet_id" {
 variable "source_image_id" {
   description = "Shared image version ID for Windows25-TrustedLaunch."
   type        = string
-  default     = "/subscriptions/da85bf0f-0270-45f2-8e70-e9dffa811bcd/resourceGroups/ThuanProject3-Test/providers/Microsoft.Compute/galleries/TestGallery/images/Windows25-TrustedLaunch/versions/0.0.1"
+  default     = "/subscriptions/da85fb0f-0270-45f2-8e70-e9dffa811bcd/resourceGroups/ThuanProject3-Test/providers/Microsoft.Compute/galleries/TestGallery/images/Windows25-TrustedLaunch/versions/0.0.1"
 }
 
 variable "vm_name" {
