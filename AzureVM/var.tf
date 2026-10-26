@@ -1,3 +1,24 @@
+variable "client_id" {
+  description = "Azure service principal application/client ID supplied by the Morpheus cloud Terraform profile."
+  type        = string
+}
+
+variable "client_secret" {
+  description = "Azure service principal client secret supplied by the Morpheus cloud Terraform profile."
+  type        = string
+  sensitive   = true
+}
+
+variable "subscription_id" {
+  description = "Deployment subscription ID supplied by the Morpheus cloud Terraform profile."
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "Microsoft Entra tenant ID supplied by the Morpheus cloud Terraform profile."
+  type        = string
+}
+
 variable "resource_group_name" {
   description = "Existing resource group for the VM and network interface."
   type        = string
