@@ -1,21 +1,21 @@
-variable "ARM_CLIENT_ID" {
-  description = "Azure service principal application/client ID."
+variable "client_id" {
+  description = "Azure service principal application/client ID supplied by the Morpheus cloud Terraform profile."
   type        = string
 }
 
-variable "ARM_CLIENT_SECRET" {
-  description = "Azure service principal client secret."
+variable "client_secret" {
+  description = "Azure service principal client secret supplied by the Morpheus cloud Terraform profile."
   type        = string
   sensitive   = true
 }
 
-variable "ARM_SUBSCRIPTION_ID" {
-  description = "Subscription where the VM and network interface will be created."
+variable "subscription_id" {
+  description = "Deployment subscription ID supplied by the Morpheus cloud Terraform profile."
   type        = string
 }
 
-variable "ARM_TENANT_ID" {
-  description = "Microsoft Entra tenant ID for the Azure service principal."
+variable "tenant_id" {
+  description = "Microsoft Entra tenant ID supplied by the Morpheus cloud Terraform profile."
   type        = string
 }
 
