@@ -1,7 +1,22 @@
-variable "subscription_id" {
+variable "ARM_CLIENT_ID" {
+  description = "Azure service principal application/client ID."
+  type        = string
+}
+
+variable "ARM_CLIENT_SECRET" {
+  description = "Azure service principal client secret."
+  type        = string
+  sensitive   = true
+}
+
+variable "ARM_SUBSCRIPTION_ID" {
   description = "Subscription where the VM and network interface will be created."
   type        = string
-  default     = "04573a48-89a8-419c-9dc6-c951dcb6f612"
+}
+
+variable "ARM_TENANT_ID" {
+  description = "Microsoft Entra tenant ID for the Azure service principal."
+  type        = string
 }
 
 variable "resource_group_name" {
