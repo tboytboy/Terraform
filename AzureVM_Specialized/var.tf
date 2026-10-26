@@ -50,7 +50,7 @@ variable "vm_name" {
 }
 
 variable "vm_size" {
-  description = "Azure VM size. Standard_D2ls_v7 provides 2 vCPUs and 4 GiB memory."
+  description = "Azure VM size. Standard_D2s_v5 provides 2 vCPUs and 8 GiB memory."
   type        = string
-  default     = "Standard_D2ls_v7"
+  default     = "Standard_D2s_v5"
 }
