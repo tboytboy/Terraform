@@ -30,9 +30,19 @@ resource "azurerm_network_interface" "vm" {
   }
 }
 
+resource "azurerm_managed_disk" "os" {
+  name                       = "${var.vm_name}-os"
+  location                   = var.location
+  resource_group_name        = var.resource_group_name
+  storage_account_type       = "StandardSSD_LRS"
+  create_option              = "FromImage"
+  gallery_image_reference_id = var.source_image_id
+  os_type                    = "Windows"
+  trusted_launch_enabled     = true
+}
+
 resource "azurerm_windows_virtual_machine" "vm" {
   name                = var.vm_name
-  computer_name       = var.vm_name
   resource_group_name = var.resource_group_name
   location            = var.location
   size                = var.vm_size
@@ -41,13 +51,12 @@ resource "azurerm_windows_virtual_machine" "vm" {
     azurerm_network_interface.vm.id
   ]
 
-  source_image_id     = var.source_image_id
+  os_managed_disk_id   = azurerm_managed_disk.os.id
   secure_boot_enabled = true
   vtpm_enabled        = true
 
   os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "StandardSSD_LRS"
+    caching = "ReadWrite"
   }
 }
 
