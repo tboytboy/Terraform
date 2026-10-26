@@ -45,7 +45,6 @@ resource "azurerm_windows_virtual_machine" "vm" {
   ]
 
   source_image_id     = var.source_image_id
-  security_type       = "TrustedLaunch"
   secure_boot_enabled = true
   vtpm_enabled        = true
 
