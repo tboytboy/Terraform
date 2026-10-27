@@ -19,7 +19,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_network_interface" "vm" {
-  name                = "${var.vm_name}-nic"
+  name                = "${<%=customOptions.VMName%>}-nic"
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -31,11 +31,11 @@ resource "azurerm_network_interface" "vm" {
 }
 
 resource "azurerm_windows_virtual_machine" "vm" {
-  name                = var.vm_name
-  computer_name       = var.vm_name
+  name                = <%=customOptions.VMName%>
+  computer_name       = <%=customOptions.VMName%>
   resource_group_name = var.resource_group_name
   location            = var.location
-  size                = var.vm_size
+  size                = <%=customOptions.azureVMplan%>
 
   admin_username = var.admin_username
   admin_password = var.admin_password
