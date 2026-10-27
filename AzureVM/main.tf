@@ -19,7 +19,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_network_interface" "vm" {
-  name                = "${<%=customOptions.VMName%>}-nic"
+  name                = "${"<%=customOptions.VMName%>"}-nic"
   location            = var.location
   resource_group_name = var.resource_group_name
 
